@@ -1,0 +1,140 @@
+
+
+#app {
+    font-family: 'Oswald', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+  }
+
+.login-page{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    background-image: url("./img/login-background.jpg");
+    height: 103vh; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; 
+}
+
+.login-page .login-box-center{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background-color: rgba(255, 255, 255, 0.8)
+}
+
+.login-page .login-box-center .login-right-side{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+.login-page .login-box-center .login-left-side{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    width: 250px;
+}
+
+.login-page .login-box-center .login-left-side .mb-4 .password-column{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.register-page {
+    justify-content:space-around;
+    background-image: url("./img/kobaja-register-page.jpg");
+    height: 103vh; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; 
+}
+
+.register-page .register-box-center {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.navbar{
+    display: flex;
+    background-color: whitesmoke;
+    font-size: 14px;
+    color:grey;
+    text-shadow: black ;
+}
+
+.text-logo{
+    font-family: 'Caveat Brush', cursive;
+}
+
+
+.navbar-options{
+display: flex;
+justify-content: space-between;
+flex-direction: row;
+}
+
+.navbar-options .left-side-text-navbar{
+    display: flex;
+    justify-content: flex-start;
+    width: 200px;
+}
+
+.navbar-options .right-side-text-navbar{
+    display: flex;
+    justify-content: space-evenly;
+    width: 200px;
+}
+
+.navbar-text-logo{
+    font-family: 'Caveat Brush', cursive;
+    font-size: 25px;
+}
+
+.add-new-box{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-container{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.home{
+    display: flex;
+    flex-direction: column;
+}
+
+.home .product-list-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 25px;
+    flex-wrap: wrap;
+}
+
+.home .product-list-box .card{
+    width: 185px;
+    height: 375px;
+}
+
+.home .product-list-box .card .card-body{
+    display: flex;
+    flex-direction: column;
+   justify-content: space-between;
+}
+
+.home .product-list-box .card .card-body .card-bot{
+    display: flex;
+    flex-direction: column;
+   justify-content: space-between;
+   height: 45%;
+}
