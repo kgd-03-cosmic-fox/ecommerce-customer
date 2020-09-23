@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    height: 100vh;
+    width: 100vw;
+}
+#app {
+    height: 100vh;
+    width: 100vw;
+}
+
+.icon-nav {
+    width: 20px;
+    height: 15px;
+    padding-right: 3px;
+
+}
+
+.box-icon {
+    border-radius: 5px !important;
+    height: 100%;
+    width: 30px;
+    margin-top: 7px;
+    border: none;
+    margin-right: 30px;
+}
+
+.form-login, .form-register {
+    padding-top: 20%;
+    padding-right: 3%;
+    height: 350px;
+    width: 300px;
+    margin: 0 auto
+}
+
+.form-login input[type=text], .form-register input[type=text]{
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 12px 20px 12px 10px;
+    margin-bottom: 10px;
+}
+
+.add-cart input[type=number] {
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    width: 40%;
+    font-size: 20px;
+    text-align: center;
+    padding-left: 7%;
+    
+}
+.form-login input[type=password], .form-register input[type=password]{
+
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 12px 20px 12px 10px;
+
+}
+
+.login-page, .register-page {
+    height: 100%;
+    width: 100%;
+    background-image: url('./bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.btn-login{
+    width: 5.4%;
+    top: 82.75%;
+    left: 45.5%;
+    position: fixed;
+}
+
+.btn-register {
+    width: 5.4%;
+    top: 82.75%;
+    left: 45.5%;
+    position: fixed;
+}
+
+.register-text {
+    margin-top: 10px;
+}
+
+.bg-custom {
+    background-color: #625CE4;
+}
+
+.card {
+    height: 400px;
+}
+
+.text-card{
+    height: 100px;
+    overflow: auto;
+}
+
+.img-size {
+    margin: 0 auto;
+    height: 125px;
+    width: 125px;
+
+}
+
+.add-cart {
+    margin-left: 20% 
+}
+
+.add-to-cart {
+    margin-left: 25%; 
+    margin-top: 10px 
+}
+
+.navbar {
+    width: 100vw;
+}
+
+.add-to-cart img {
+    height: 40px;
+    width: 50px;
+}
+
+.alert-error{
+    margin-top: 10px;
+    font-size: 14px !important;
+}
+
+.card-text, .card-title {
+    text-align: center;
+}

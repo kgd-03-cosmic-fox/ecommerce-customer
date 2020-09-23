@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <NavBar></NavBar>
+    <NavBar v-show="loginStatus" class="navbar"></NavBar>
     <router-view/>
   </div>
 </template>
@@ -11,6 +11,21 @@ import NavBar from './components/NavBar'
 export default {
   components: {
     NavBar
+  },
+  computed: {
+    loginStatus () {
+      return this.$store.state.statusLogin
+    }
+  },
+  created () {
+    if (localStorage.getItem('access_token')) {
+      this.$store.dispatch('fetchDataProduct')
+      this.$store.commit('SET_STATUS_LOGIN', true)
+      this.$router.push({ name: 'Home' })
+    } else {
+      this.$store.commit('SET_STATUS_LOGIN', false)
+      this.$router.push({ name: 'Login' })
+    }
   }
 }
 </script>
@@ -23,17 +38,3 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>

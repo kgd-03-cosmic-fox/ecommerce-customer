@@ -3,7 +3,8 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Cart from '../views/Cart.vue'
 import History from '../views/History.vue'
-
+import Login from '../views/Login.vue'
+import Register from '../views/Register.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -29,6 +30,16 @@ const routes = [
     path: '/cart',
     name: 'Cart',
     component: Cart
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: Register
   }
 ]
 
