@@ -62,7 +62,7 @@ export default {
       } else {
         axios({
           method: 'POST',
-          url: 'http://localhost:3007/customer/register',
+          url: 'https://ecommerge-cms.herokuapp.com/customer/register',
           data: {
             name: this.user.name,
             email: this.user.email,

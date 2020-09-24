@@ -35,7 +35,7 @@ export default new Vuex.Store({
   actions: {
     fetchProduct (context, payload) {
       axios({
-        url: 'http://localhost:3007/customer/items',
+        url: 'https://ecommerge-cms.herokuapp.com/customer/items',
         method: 'GET',
         headers: {
           access_token: localStorage.getItem('access_token')
@@ -45,12 +45,15 @@ export default new Vuex.Store({
           context.commit('SET_PRODUCTS', data)
         })
         .catch(err => {
-          console.log(err)
+          context.commit('SET_ERROR_NOTIF', err)
+          setTimeout(() => {
+            context.commit('SET_ERROR_NOTIF', '')
+          }, 3000)
         })
     },
     fetchCart (context) {
       axios({
-        url: 'http://localhost:3007/customer/cart',
+        url: 'https://ecommerge-cms.herokuapp.com/customer/cart',
         method: 'GET',
         headers: {
           access_token: localStorage.getItem('access_token')
@@ -65,7 +68,7 @@ export default new Vuex.Store({
     },
     fetchProductById (context, payload) {
       axios({
-        url: `http://localhost:3007/customer/items/${payload.id}`,
+        url: `https://ecommerge-cms.herokuapp.com/customer/items/${payload.id}`,
         method: 'GET',
         headers: {
           access_token: localStorage.getItem('access_token')
@@ -80,7 +83,7 @@ export default new Vuex.Store({
     },
     fetchCartProductById (context, payload) {
       axios({
-        url: `http://localhost:3007/customer/cart/${payload.id}`,
+        url: `https://ecommerge-cms.herokuapp.com/customer/cart/${payload.id}`,
         method: 'GET',
         headers: {
           access_token: localStorage.getItem('access_token')
@@ -95,7 +98,7 @@ export default new Vuex.Store({
     },
     addCart (context, payload) {
       axios({
-        url: `http://localhost:3007/customer/cart/${payload.id}`,
+        url: `https://ecommerge-cms.herokuapp.com/customer/cart/${payload.id}`,
         method: 'POST',
         data: {
           ammount: payload.ammount
@@ -113,7 +116,7 @@ export default new Vuex.Store({
     },
     deleteCart (context, payload) {
       axios({
-        url: `http://localhost:3007/customer/cart/${payload.id}`,
+        url: `https://ecommerge-cms.herokuapp.com/customer/cart/${payload.id}`,
         method: 'Delete',
         headers: {
           access_token: localStorage.getItem('access_token')
@@ -128,7 +131,7 @@ export default new Vuex.Store({
     },
     cartUpdate (context, payload) {
       axios({
-        url: `http://localhost:3007/customer/cart/${payload.id}`,
+        url: `https://ecommerge-cms.herokuapp.com/customer/cart/${payload.id}`,
         method: 'Patch',
         data: {
           ammount: payload.ammount

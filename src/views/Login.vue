@@ -46,7 +46,7 @@ export default {
     login () {
       axios({
         method: 'POST',
-        url: 'http://localhost:3007/customer/login',
+        url: 'https://ecommerge-cms.herokuapp.com/customer/login',
         data: {
           email: this.user.email,
           password: this.user.password
