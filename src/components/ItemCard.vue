@@ -8,7 +8,6 @@
     </div>
     <div class="card-button">
       <router-link :to="`/detail/${item.id}`"><button type="button" class="btn btn-primary">Add To Cart</button></router-link>
-      <router-link :to="`/detail/${item.id}`"><button type="button" class="btn btn-warning">Details</button></router-link>
     </div>
   </div>
 </template>

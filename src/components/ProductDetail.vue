@@ -4,10 +4,10 @@
       {{ this.errorAlert }}
     </div>
     <div class="row">
-      <div class="col-7">
-        <img :src="product.image_url" height="400px" width="600px" style="margin-top:150px; ">
+      <div class="col col-lg-7 col-sm-auto col-md-auto">
+        <img :src="product.image_url" height="400px" width="600px" style="margin-top:150px;" class="img-fluid">
       </div>
-      <div class="col-5" style="margin-top:200px">
+      <div class="col col-lg-5 col-sm-auto col-md-auto" style="margin-top:200px">
         <div class="container-fluid">
           <h1>{{ product.name }}</h1>
           <h4 style="margin-top:40px">Stock : {{ product.stock }}</h4>
