@@ -13,7 +13,7 @@
           <p class="card-text">Stock {{getProduct.stock}}</p>
         </div>
         <div class="lower-body">
-          <button @click="addToCart(product.id)" class="btn btn-sm btn-outline-success">Add to cart</button>
+          <button @click="addToCart(getProduct.id)" class="btn btn-sm btn-outline-success">Add to cart</button>
         </div>
       </div>
       </div>
