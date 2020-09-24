@@ -8,6 +8,7 @@ import CoffeeMachines from '../components/CoffeeMachines.vue'
 import Coffee from '../components/Coffee.vue'
 import EditingPage from '../views/EditingPage.vue'
 import RegisterPage from '../views/RegisterPage.vue'
+import CheckoutPage from '../views/CheckoutPage.vue'
 
 Vue.use(VueRouter)
 
@@ -57,6 +58,11 @@ const routes = [
     path: '/register',
     name: 'RegisterPage',
     component: RegisterPage
+  },
+  {
+    path: '/checkout',
+    name: 'CheckoutPage',
+    component: CheckoutPage
   }
 ]
 

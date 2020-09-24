@@ -20,7 +20,7 @@
                       <label for="exampleInputPassword2">Confirm Password</label>
                       <input v-model='user.confirmPassword' type="password" class="form-control" id="exampleInputPassword2">
                       <div style="height: 35px">
-                        <div v-if="notification.show" class="alert alert-danger p-0 m-2" role="alert" style="text-align:center">{{notification.message}}</div>
+                        <div v-if="notification.show" :class="notification.color" role="alert" style="text-align:center">{{notification.message}}</div>
                       </div>
                   </div>
                   <div id="buttons-register-page">
@@ -64,15 +64,14 @@ export default {
           }
         })
           .then(({ data }) => {
-            this.$store.commit('SET_NOTIFICATION', { message: data.message, show: true })
+            this.$store.commit('SET_NOTIFICATION', { message: data.message, show: true, color: 'alert alert-success' })
             setTimeout(() => {
               this.$router.push({ name: 'LoginPage' })
-              this.$store.commit('SET_NOTIFICATION', { message: '', show: false })
+              this.$store.commit('SET_NOTIFICATION', { message: '', show: false, color: '' })
             }, 3000)
           })
           .catch((error) => {
-            console.log(error.response)
-            this.$store.commit('SET_NOTIFICATION', { message: error.response.data.errors[0], show: true })
+            this.$store.commit('SET_NOTIFICATION', { message: error.response.data.errors[0], show: true, color: 'alert alert-danger' })
           })
       } else {
         console.log('password didnt match')

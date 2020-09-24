@@ -12,8 +12,10 @@ export default new Vuex.Store({
     products: [],
     notification: {
       show: false,
-      message: ''
-    }
+      message: '',
+      color: ''
+    },
+    cartProducts: []
   },
   mutations: {
     SET_DATA_PRODUCTS (state, payload) {
@@ -23,9 +25,13 @@ export default new Vuex.Store({
       state.user.name = payload
     },
     SET_NOTIFICATION (state, payload) {
-      console.log('Notif terpanggil')
+      console.log(payload)
       state.notification.show = payload.show
       state.notification.message = payload.message
+      state.notification.color = payload.color
+    },
+    SET_CART_PRODUCTS (state, payload) {
+      state.cartProducts = payload
     }
   },
   actions: {
@@ -41,7 +47,6 @@ export default new Vuex.Store({
         }
       })
         .then(({ data }) => {
-          console.log(data)
           context.commit('SET_DATA_PRODUCTS', data.products)
         })
         .catch(err => {
@@ -64,7 +69,6 @@ export default new Vuex.Store({
         })
     },
     addNewProduct (context, payload) {
-      console.log(payload)
       kobajaApi({
         url: '/product',
         method: 'POST',
@@ -88,6 +92,59 @@ export default new Vuex.Store({
         })
         .catch(err => {
           console.log(err)
+        })
+    },
+    setAmount (context, payload) {
+      kobajaApi({
+        url: `/cart/${payload.id}`,
+        method: 'POST',
+        headers: {
+          access_token: localStorage.getItem('access_token')
+        },
+        data: {
+          amount: payload.amount
+        }
+      })
+        .then(({ data }) => {
+          context.dispatch('fetchCartProducts')
+          context.commit('SET_NOTIFICATION', { message: data.message, show: true, color: 'alert alert-success' })
+          setTimeout(() => {
+            context.commit('SET_NOTIFICATION', { message: '', show: false })
+          }, 5000)
+        })
+        .catch(err => {
+          console.log(err.response)
+        })
+    },
+    fetchCartProducts (context, payload) {
+      kobajaApi({
+        url: '/cart',
+        method: 'GET',
+        headers: {
+          access_token: localStorage.getItem('access_token')
+        }
+      })
+        .then(({ data }) => {
+          context.commit('SET_CART_PRODUCTS', data.cartProduct)
+        })
+        .catch(err => {
+          console.log(err.response)
+        })
+    },
+    deleteProductFromCartList (context, payload) {
+      kobajaApi({
+        url: `/cart/${payload}`,
+        method: 'DELETE',
+        headers: {
+          access_token: localStorage.getItem('access_token')
+        }
+      })
+        .then(({ data }) => {
+          console.log(data)
+          context.dispatch('fetchCartProducts')
+        })
+        .catch(err => {
+          console.log(err.response)
         })
     }
   },

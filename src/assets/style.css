@@ -72,10 +72,11 @@
 }
 
 
-.navbar-options{
+.navbar{
 display: flex;
 justify-content: space-between;
 flex-direction: row;
+height: 100px;
 }
 
 .navbar-options .left-side-text-navbar{
@@ -86,8 +87,9 @@ flex-direction: row;
 
 .navbar-options .right-side-text-navbar{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     width: 200px;
+    padding-right: 25px;
 }
 
 .navbar-text-logo{
@@ -123,18 +125,29 @@ flex-direction: row;
 
 .home .product-list-box .card{
     width: 185px;
-    height: 375px;
+    height: 425px;
 }
 
 .home .product-list-box .card .card-body{
     display: flex;
     flex-direction: column;
-   justify-content: space-between;
+    justify-content: space-around;
+    height: 100px;
 }
 
 .home .product-list-box .card .card-body .card-bot{
     display: flex;
     flex-direction: column;
    justify-content: space-between;
-   height: 45%;
+}
+
+.checkout-box-left{
+    display: flex;
+    flex-direction: column;
+    height:100vh
+}
+
+.checkout-box-right{
+    display: flex;
+    height:100vh
 }

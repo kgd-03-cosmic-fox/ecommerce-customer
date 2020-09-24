@@ -15,9 +15,15 @@
             </li>
         </ul>
     </div>
-    <div class="right-side-text-navbar my-2 my-lg-2">
-        <button @click="logout" class="btn btn-outline-danger my-2 my-sm-0 text-reset nav-linkZ">Logout</button>
-        <img src="../assets/img/shopping-cart.svg" alt="" style="width:35px">
+    <div class="right-side-text-navbar my-2 my-lg-2" style="height:50%">
+         <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <router-link class="nav-link text-reset" to="/checkout">
+                  <img src="../assets/img/shopping-cart.svg" alt="" style="width:35px">
+                </router-link>
+            </li>
+        </ul>
+        <button @click="logout" class="btn btn-outline-danger my-2 my-sm-0 text-reset nav-link">Logout</button>
     </div>
 </nav>
 </template>

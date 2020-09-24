@@ -1,6 +1,9 @@
 <template>
   <div class="home">
     <NavBar/>
+    <div v-if="notification.show" :class="notification.color" role="alert">
+  {{notification.message}}
+</div>
     <h1>Selamat datang, {{name}} </h1>
     <Products
     ></Products>
@@ -23,6 +26,9 @@ export default {
     },
     products () {
       return this.$store.state.products
+    },
+    notification () {
+      return this.$store.state.notification
     }
   },
   beforeRouteEnter (to, from, next) {
