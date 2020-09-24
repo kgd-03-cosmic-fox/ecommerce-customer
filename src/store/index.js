@@ -45,7 +45,7 @@ export default new Vuex.Store({
           context.commit('UPDATE_CART_CONTENT', data.CartProducts)
         })
         .catch((err) => {
-          context.commit('UPDATE_ERROR_MESSAGE', err.response.data.message)
+          context.commit('UPDATE_ERROR_MESSAGE', err.response)
         })
     },
     fetchProductDatas (context) {

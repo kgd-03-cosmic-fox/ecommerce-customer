@@ -2,7 +2,7 @@
   <section id="navbar-section">
     <nav class="navbar navbar-expand-lg navbar-light bg-light row">
       <h2 class="navbar-brand col-3 ml-2">
-       <router-link to="/Home">Backspace Computer</router-link>
+       <router-link to="/">Backspace Computer</router-link>
         </h2>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="card" style="width: 18rem">
-      <img class="card-img-top" style="width:25vw" :src="product.image_url" />
+      <img class="card-img-top" style="width:20vw" :src="product.image_url" />
       <div class="card-body">
         <h5 class="card-title">{{product.name}}</h5>
         <p class="card-text row">

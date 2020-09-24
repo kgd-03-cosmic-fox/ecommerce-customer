@@ -26,7 +26,7 @@
           />
         </div>
         <div class="row justify-content-around mx-5">
-          <router-link to="/home">
+          <router-link to="/">
             <button class="btn btn-secondary btn-lg">Back</button>
           </router-link>
           <button type="submit" class="btn btn-primary btn-lg">Login</button>
@@ -66,6 +66,7 @@ export default {
           localStorage.setItem('access_token', data.access_token)
           this.$store.commit('UPDATE_ERROR_MESSAGE', null)
           this.$store.commit('USER_STATE', data.name)
+          this.$router.push('/')
         })
         .catch((err) => {
           this.$store.commit('UPDATE_ERROR_MESSAGE', err.response.data.message)

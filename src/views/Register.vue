@@ -26,7 +26,7 @@
           />
         </div>
         <div class="row justify-content-around mx-5">
-          <router-link to="/home">
+          <router-link to="/">
             <button class="btn btn-secondary btn-lg">Back</button>
           </router-link>
           <button type="submit" class="btn btn-primary btn-lg">register</button>

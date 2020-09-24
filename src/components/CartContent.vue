@@ -3,7 +3,7 @@
     <th class="col-3">
       <img
         class="card-img-top"
-        style="width: 20vw"
+        style="width: 10vw"
         :src="content.Product.image_url"
       />
     </th>
