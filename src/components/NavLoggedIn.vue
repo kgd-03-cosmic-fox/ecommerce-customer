@@ -21,7 +21,7 @@ export default {
   methods: {
     logout () {
       localStorage.clear()
-      this.$store.commit('USER_STATE', null)
+      this.$store.commit('RESET_STATE', null)
     }
   }
 }

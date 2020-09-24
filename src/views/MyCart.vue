@@ -13,7 +13,7 @@
           <th scope="col" class="col-3"></th>
         </tr>
       </thead>
-      <tbody>
+      <tbody v-if="fetchedContent.length > 0">
         <CartContent
           v-for="content in fetchedContent"
           :key="content.id"

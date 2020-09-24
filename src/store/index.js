@@ -14,10 +14,20 @@ export default new Vuex.Store({
     successMessage: null
   },
   mutations: {
+    RESET_STATE (state) {
+      state.user = null
+      state.cartContent = []
+      state.currentEdit = null
+      state.errorMessage = null
+      state.successMessage = null
+    },
     USER_STATE (state, payload) {
       state.user = payload
     },
     UPDATE_CART_CONTENT (state, payload) {
+      if (payload === null) {
+        payload = []
+      }
       state.cartContent = payload
     },
     UPDATE_PRODUCTS_STATE (state, payload) {
@@ -42,7 +52,9 @@ export default new Vuex.Store({
         }
       })
         .then(({ data }) => {
-          context.commit('UPDATE_CART_CONTENT', data.CartProducts)
+          if (data) {
+            context.commit('UPDATE_CART_CONTENT', data.CartProducts)
+          }
         })
         .catch((err) => {
           context.commit('UPDATE_ERROR_MESSAGE', err.response)

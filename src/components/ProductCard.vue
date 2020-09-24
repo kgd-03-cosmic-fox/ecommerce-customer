@@ -25,7 +25,7 @@
             </tr>
           </table>
         </p>
-        <form class="row justify-content-center" @submit="addToCart()">
+        <form class="row justify-content-center" @submit.prevent="addToCart()">
           <input type="number" class="col-4" min="0" :max="product.stock" v-model="amount">
           <button type="submit" class="btn btn-primary col-6">Add to Cart</button>
         </form>
@@ -57,6 +57,9 @@ export default {
         })
         .catch((err) => {
           this.$store.commit('UPDATE_ERROR_MESSAGE', err.response.data.message)
+        })
+        .finally(() => {
+          this.amount = 0
         })
     }
   }
