@@ -5,7 +5,7 @@
     <div class="text-card">
     <h5 class="card-title">{{product.name}}</h5>
     <p class="card-text">
-      Price: {{product.price}} <br>
+      Price: {{formatPrice}} <br>
       Stock: {{product.stock}} left</p>
     </div>
     <div class="add-cart">
@@ -38,6 +38,11 @@ export default {
       statusUp: '',
       addSuccess: false,
       failedAdd: ''
+    }
+  },
+  computed: {
+    formatPrice () {
+      return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'IDR' }).format(this.product.price)
     }
   },
   methods: {

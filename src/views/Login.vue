@@ -86,9 +86,6 @@ export default {
   created () {
     this.$store.commit('SET_MESSAGE_ERROR', '')
     this.$store.commit('SET_MESSAGE_SUCCESS', '')
-  },
-  beforeRouteEnter (to, from, next) {
-    
   }
 }
 </script>

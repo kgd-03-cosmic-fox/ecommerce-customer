@@ -3,19 +3,18 @@
     padding: 0;
 }
 body {
-    height: 100vh;
     width: 100vw;
+    height: 100vh;
 }
 #app {
-    height: 100vh;
     width: 100vw;
+    height: 100vh;
 }
 
 .icon-nav {
     width: 20px;
     height: 15px;
     padding-right: 3px;
-
 }
 
 .box-icon {
@@ -32,7 +31,7 @@ body {
     padding-right: 3%;
     height: 350px;
     width: 300px;
-    margin: 0 auto
+    margin: 0 auto;
 }
 
 .form-login input[type=text], .form-register input[type=text]{
@@ -52,7 +51,16 @@ body {
     font-size: 20px;
     text-align: center;
     padding-left: 7%;
-    
+}
+
+.update-cart input[type=number] {
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    width: 20%;
+    font-size: 20px;
+    text-align: center;
+    padding-left: 3%;
 }
 .form-login input[type=password], .form-register input[type=password]{
 
@@ -111,7 +119,8 @@ body {
 }
 
 .add-cart {
-    margin-left: 20% 
+    margin-left: 20%; 
+    margin-top: 10px;
 }
 
 .add-to-cart {
@@ -135,4 +144,40 @@ body {
 
 .card-text, .card-title {
     text-align: center;
+}
+
+.table-product img{
+    height: 50px;
+    width: 50px;
+}
+
+.table-product {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+#delete {
+    width: 30px;
+    height: 30px;
+    margin-left: 4px;
+}
+
+th , td {
+    text-align: center;
+}
+
+.rmv-cart{
+    width: 100%;
+}
+
+.rmv {
+    margin-left: 80%;
+    margin-bottom: 10px;
+}
+
+.text-alert {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto 10px auto;
 }

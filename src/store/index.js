@@ -8,6 +8,7 @@ export default new Vuex.Store({
     products: [],
     successMessage: '',
     errorMessage: '',
+    carts: [],
     statusLogin: false
   },
   mutations: {
@@ -22,6 +23,9 @@ export default new Vuex.Store({
     },
     SET_STATUS_LOGIN (state, payload) {
       state.statusLogin = payload
+    },
+    SET_CARTS (state, payload) {
+      state.carts = payload
     }
   },
   actions: {
@@ -35,6 +39,21 @@ export default new Vuex.Store({
       })
         .then(({ data }) => {
           context.commit('SET_PRODUCT_ITEM', data)
+        })
+        .catch(err => {
+          context.commit('SET_MESSAGE_ERROR', err.response.data.message)
+        })
+    },
+    fetchDataCart (context) {
+      ProductApi({
+        method: 'get',
+        url: '/carts',
+        headers: {
+          access_token: localStorage.getItem('access_token')
+        }
+      })
+        .then(({ data }) => {
+          context.commit('SET_CARTS', data)
         })
         .catch(err => {
           context.commit('SET_MESSAGE_ERROR', err.response.data.message)
