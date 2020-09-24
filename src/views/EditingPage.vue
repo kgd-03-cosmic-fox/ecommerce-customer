@@ -24,6 +24,7 @@
 
 <script>
 import NavBar from '../components/NavBar'
+import kobajaApi from '../api/kobajaApi'
 
 export default {
   name: 'CategoryPage',
@@ -50,12 +51,30 @@ export default {
   methods: {
     addToCart (id) {
       this.$store.dispatch('addProductToCart', { id, amount: 1 })
+    },
+    fetchProductById () {
+      kobajaApi({
+        url: `/product/${this.$route.params.id}`,
+        headers: {
+          access_token: localStorage.getItem('access_token')
+        }
+      })
+        .then(({ data }) => {
+          this.getProduct.name = data.product.name
+          this.getProduct.price = data.product.price
+          this.getProduct.stock = data.product.stock
+          this.getProduct.imgUrl = data.product.imgUrl
+        })
+        .catch(err => {
+          console.log(err)
+        })
     }
   },
   created () {
     this.fetchProductById()
   }
 }
+
 </script>
 
 <style>
