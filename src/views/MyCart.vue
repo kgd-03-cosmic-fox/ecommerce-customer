@@ -1,5 +1,7 @@
 <template>
-  <div>
+  <div class="row">
+    <div class="col-1">
+    </div>
     <h1>My Cart</h1>
     <table class="table">
       <thead>

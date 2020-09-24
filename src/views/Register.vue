@@ -59,9 +59,17 @@ export default {
           password: this.user.password
         }
       })
-        .then(({ data }) => {})
+        .then(({ data }) => {
+          this.$store.commit('UPDATE_SUCCESS_MESSAGE', 'Register successful!')
+          this.$store.commit('UPDATE_ERROR_MESSAGE', null)
+          this.$router.push('/')
+        })
         .catch((err) => {
           this.$store.commit('UPDATE_ERROR_MESSAGE', err.response.data.message)
+        })
+        .finally(() => {
+          this.user.email = ''
+          this.user.password = ''
         })
     }
   }

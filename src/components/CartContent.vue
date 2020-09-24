@@ -1,6 +1,7 @@
 <template>
   <tr class="row">
-    <th class="col-3">
+    <div class="col-1"></div>
+    <th class="col-2">
       <img
         class="card-img-top"
         style="width: 10vw"

@@ -2,7 +2,7 @@
   <div>
     <section id="login-section" class="container shadow-lg p-3 mb-5 rounded">
       <form @submit.prevent="login()">
-        <h1 style="text-align: center">CMS Admin Login</h1>
+        <h1 style="text-align: center">Login</h1>
         <div class="form-group">
           <label for="email-login" class="label">
             <h4>Email address</h4>
