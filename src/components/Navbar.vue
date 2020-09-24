@@ -11,7 +11,7 @@
         <li class="nav-item">
         </li>
       </ul>
-      <div class="col-5">
+      <div class="col-4">
         <NavLoggedIn v-if="user !== null"></NavLoggedIn>
         <NavNotLoggedIn v-else></NavNotLoggedIn>
       </div>

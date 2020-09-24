@@ -1,7 +1,7 @@
 <template>
   <div>
     <ErrorMessage v-if="errorMsg !== null" v-bind:msg="errorMsg"></ErrorMessage>
-    <SuccessMessage v-else-if="successMsg !== null" v-bind:msg="successMsg"></SuccessMessage>
+    <SuccessMessage v-if="successMsg !== null" v-bind:msg="successMsg"></SuccessMessage>
   </div>
 </template>
 

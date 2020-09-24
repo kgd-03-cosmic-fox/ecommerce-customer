@@ -25,8 +25,11 @@
             v-model="user.password"
           />
         </div>
-        <div class="row justify-content-center mx-5">
-          <button type="submit" class="btn btn-primary">register</button>
+        <div class="row justify-content-around mx-5">
+          <router-link to="/home">
+            <button class="btn btn-secondary btn-lg">Back</button>
+          </router-link>
+          <button type="submit" class="btn btn-primary btn-lg">register</button>
         </div>
       </form>
     </section>
@@ -56,9 +59,7 @@ export default {
           password: this.user.password
         }
       })
-        .then(({ data }) => {
-
-        })
+        .then(({ data }) => {})
         .catch((err) => {
           this.$store.commit('UPDATE_ERROR_MESSAGE', err.response.data.message)
         })

@@ -33,6 +33,21 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    fetchCartContent (context) {
+      cmsAPI({
+        url: '/cart',
+        method: 'GET',
+        headers: {
+          access_token: localStorage.getItem('access_token')
+        }
+      })
+        .then(({ data }) => {
+          context.commit('UPDATE_CART_CONTENT', data.CartProducts)
+        })
+        .catch((err) => {
+          context.commit('UPDATE_ERROR_MESSAGE', err.response.data.message)
+        })
+    },
     fetchProductDatas (context) {
       cmsAPI({
         url: '/products',

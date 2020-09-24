@@ -25,8 +25,11 @@
             v-model="user.password"
           />
         </div>
-        <div class="row justify-content-center mx-5">
-          <button type="submit" class="btn btn-primary">Login</button>
+        <div class="row justify-content-around mx-5">
+          <router-link to="/home">
+            <button class="btn btn-secondary btn-lg">Back</button>
+          </router-link>
+          <button type="submit" class="btn btn-primary btn-lg">Login</button>
         </div>
       </form>
     </section>
@@ -62,7 +65,7 @@ export default {
         .then(({ data }) => {
           localStorage.setItem('access_token', data.access_token)
           this.$store.commit('UPDATE_ERROR_MESSAGE', null)
-          this.$router.push({ name: 'Home' })
+          this.$store.commit('USER_STATE', data.name)
         })
         .catch((err) => {
           this.$store.commit('UPDATE_ERROR_MESSAGE', err.response.data.message)

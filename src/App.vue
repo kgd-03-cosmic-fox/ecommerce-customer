@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <Navbar style="width: 98vw"></Navbar>
+  <div id="app" style="width: 97vw">
+    <Navbar style="width: 96vw"></Navbar>
     <SysMsgSpace></SysMsgSpace>
     <router-view />
   </div>
