@@ -9,12 +9,11 @@
       <div id="card-body">
         <div class="upper-body">
           <h3>{{getProduct.name}}</h3>
-          <h5 class="card-title" >{{getProduct.name}}</h5>
           <p class="card-text">Rp. {{getProduct.price}}</p>
           <p class="card-text">Stock {{getProduct.stock}}</p>
         </div>
         <div class="lower-body">
-          <button @click="addToCart(product.id)" class="btn btn-sm btn-outline-primary">Add to cart</button>
+          <button @click="addToCart(product.id)" class="btn btn-sm btn-outline-success">Add to cart</button>
         </div>
       </div>
       </div>
