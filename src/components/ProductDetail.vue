@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     addAmmount () {
-      if (this.ammount > this.product.stock - 1) {
+      if (this.ammount > this.product.stock) {
         this.buttonPlus = false
       } else {
         this.buttonMin = true
@@ -59,13 +59,17 @@ export default {
       }
     },
     addToCart (id) {
-      if (this.ammount > this.product.stock - 1 || this.ammount < 1) {
+      if (this.ammount > this.product.stock || this.ammount < 1) {
         this.errorAlert = 'Please Correct your Ammount Number'
         setTimeout(() => {
           this.errorAlert = ''
         }, 3000)
       } else {
         this.$store.dispatch('addCart', { id: id, ammount: this.ammount })
+        this.$store.commit('SET_NOTIF', 'Success Product to Your Cart')
+        setTimeout(() => {
+          this.$store.commit('SET_NOTIF', '')
+        }, 3000)
         this.$router.push({ path: '/' })
       }
     },

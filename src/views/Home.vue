@@ -1,6 +1,12 @@
 <template>
     <div class="home-page">
       <Navbar></Navbar>
+        <div class="alert alert-success" role="alert" v-if="this.$store.state.notif">
+          {{ this.$store.state.notif }}
+        </div>
+        <div class="alert alert-danger" role="alert" v-if="this.$store.state.errorNotif">
+          {{ this.$store.state.errorNotif }}
+        </div>
       <div class="container-fluid">
         <div class="row">
           <div class="col-2" style="background-color: #c2ccd0;  height: auto;">

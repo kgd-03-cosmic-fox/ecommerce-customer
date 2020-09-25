@@ -35,7 +35,7 @@ export default {
       }
     },
     incrementButton () {
-      if (this.ammount > this.cart.Product.stock - 1) {
+      if (this.ammount > this.cart.Product.stock) {
         this.buttonPlus = false
       } else {
         this.buttonMin = true
@@ -61,7 +61,7 @@ export default {
       }
     },
     updateCart (id) {
-      if (this.ammount > this.cart.Product.stock - 1 || this.ammount < 1) {
+      if (this.ammount > this.cart.Product.stock || this.ammount < 1) {
         // console.log('Kepanggil')
         this.$store.commit('SET_ERROR_NOTIF', 'Please Correct your Ammount Number')
         setTimeout(() => {

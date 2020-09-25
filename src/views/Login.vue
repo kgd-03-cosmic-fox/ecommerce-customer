@@ -57,18 +57,12 @@ export default {
           this.$router.push({ path: '/' })
         })
         .catch(err => {
-          this.user.notif = err.response.data.message
-          setTimeout(() => {
-            this.user.notif = ''
-          }, 3000)
+          console.log(err)
+          // this.user.notif = err.response.data.message
+          // setTimeout(() => {
+          //   this.user.notif = ''
+          // }, 3000)
         })
-    }
-  },
-  created () {
-    if (localStorage.access_token) {
-      this.$store.dispatch('fetchProduct', { message: '' })
-    } else {
-      this.$router.push({ path: '/login' })
     }
   }
 }
