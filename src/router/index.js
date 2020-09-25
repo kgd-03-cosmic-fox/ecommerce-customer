@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import MyCart from '../views/MyCart.vue'
+import PurchaseHistory from '../views/PurchaseHistory.vue'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,11 @@ const routes = [
     path: '/shoppingcart',
     name: 'MyCart',
     component: MyCart
+  },
+  {
+    path: '/history',
+    name: 'PurchaseHistory',
+    component: PurchaseHistory
   }
 ]
 

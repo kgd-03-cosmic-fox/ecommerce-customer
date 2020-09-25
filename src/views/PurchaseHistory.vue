@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-1">
     </div>
-    <h1 class="col-6">My Cart</h1>
-    <button class="col-3 btn btn-primary btn-lg" @click="goToHistory()">History</button>
+    <h1 class="col-6">Purchase History</h1>
+    <button class="col-3 btn btn-primary btn-lg" @click="goToCart()">Cart</button>
     <table class="table">
       <thead>
         <tr class="row">
@@ -13,16 +13,16 @@
             Amount
           </th>
           <th scope="col" class="col-2">Price</th>
-          <th scope="col" class="col-3"></th>
+          <th scope="col" class="col-3">Time of Purchase</th>
         </tr>
       </thead>
       <tbody v-if="fetchedContent.length > 0">
-        <CartContent
+        <HistoryContent
           v-for="content in fetchedContent"
           :key="content.id"
           :content="content"
         >
-        </CartContent>
+        </HistoryContent>
         <tr class="row">
           <th class="col-3"></th>
           <th scope="col" class="col-4" style="word-wrap: break-word">
@@ -37,7 +37,7 @@
             }}
           </th>
           <th scope="col" class="col-1" style="word-wrap: break-word">
-            <button class="btn btn-lg btn-success" @click="checkout()">Checkout</button>
+            <button class="btn btn-lg btn-success">Checkout</button>
           </th>
         </tr>
       </tbody>
@@ -47,9 +47,9 @@
 
 <script>
 import cmsApi from '../api/cms-api'
-import CartContent from '../components/CartContent.vue'
+import HistoryContent from '../components/HistoryContent.vue'
 export default {
-  components: { CartContent },
+  components: { HistoryContent },
   computed: {
     totalPrice () {
       let output = 0
@@ -59,12 +59,12 @@ export default {
       return output
     },
     fetchedContent () {
-      return this.$store.state.cartContent
+      return this.$store.state.purchaseHistory
     }
   },
   methods: {
-    goToHistory () {
-      this.$router.push('/history')
+    goToCart () {
+      this.$router.push('/shoppingcart')
     },
     checkout () {
       cmsApi({
@@ -81,7 +81,7 @@ export default {
     }
   },
   created () {
-    this.$store.dispatch('fetchCartContent')
+    this.$store.dispatch('fetchPurchaseHistory')
   }
 }
 </script>
