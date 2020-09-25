@@ -21,7 +21,7 @@
     <div id="total-card" >
     <h5 class="card-title">Subtotal: {{getSubTotal}}</h5>
     <p class="card-text">Total price: {{getSubTotalPrice}}</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <a href="#" class="btn btn-primary">Checkout</a>
     </div>
   </div>
 </div>

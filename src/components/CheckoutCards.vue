@@ -13,7 +13,7 @@
       <div class="input-group-prepend">
         <button @click="decerementCart(product.Product.id)" class="btn btn-sm btn-outline-secondary" type="button" id="button-addon1">-</button>
       </div>
-      <input disabled style="text-align:center" class="form-control" :value="product.amount"  :placeholder="product.amount" aria-label="Example text with button addon" aria-describedby="button-addon1">
+      <input disabled min="1" style="text-align:center" class="form-control" :value="product.amount"  :placeholder="product.amount" aria-label="Example text with button addon" aria-describedby="button-addon1">
         <button @click="addToCart(product.Product.id)" class="btn btn-outline-secondary" type="button" id="button-addon1">+</button>
       </div>
       <div class="d-flex flex-row-reverse bd-highlight">

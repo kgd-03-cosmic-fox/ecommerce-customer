@@ -106,11 +106,12 @@ export default new Vuex.Store({
         }
       })
         .then(({ data }) => {
-          context.dispatch('fetchCartProducts')
+          console.log(data)
           context.commit('SET_NOTIFICATION', { message: data.message, show: true, color: 'alert alert-success' })
+          context.dispatch('fetchCartProducts')
           setTimeout(() => {
             context.commit('SET_NOTIFICATION', { message: '', show: false })
-          }, 5000)
+          }, 2000)
         })
         .catch(err => {
           console.log(err.response)
