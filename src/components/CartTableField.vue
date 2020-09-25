@@ -28,9 +28,10 @@ export default {
       const agreement = confirm('Are You Sure Wanna Delete this Item from your cart?')
       if (agreement) {
         this.$store.dispatch('deleteCart', { id: id })
-        this.notif = 'Item Has Removed from Your Cart'
+        this.$store.state.notif =
+        this.$store.commit('SET_NOTIF', 'Item Has Removed from Your Cart')
         setTimeout(() => {
-          this.notif = ''
+          this.$store.commit('SET_NOTIF', '')
         }, 3000)
       }
     },
