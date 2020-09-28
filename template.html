@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@300&family=Ranchers&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title></title>
+  </head>
+  <body>
+    <!-- <div class="login-page">
+      <div class="login-box p-5">
+        <h1 style="text-align: center;">SignUp</h1>
+        <form class="mb-3">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Name</span>
+            </div>
+            <input type="text" class="form-control" placeholder="Nick Name" aria-label="Email" aria-describedby="basic-addon1">
+          </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">@</span>
+              </div>
+              <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">*</span>
+              </div>
+              <input type="password" class="form-control" placeholder="Type Your Password Here" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">*</span>
+              </div>
+              <input type="password" class="form-control" placeholder="Re-Type Password" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="form-item">
+              <button type="button" class="btn btn-primary">SignUp</button>
+            </div>
+        </form>
+      </div>
+    </div> -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">H8Shop</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">My Cart</a>
+            </li>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+      <div class="home-page">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-3" style="background-color: #c2ccd0; height: 100vh;">
+              <div class="side-bar">
+                <div class="col">
+                  <div class="my-3">
+                    Profile
+                  </div>
+                  <div class="my-3">
+                    Sort by Lowest Price
+                  </div>
+                  <div class="my-3">
+                    Sort by Highest Price
+                  </div>
+                  <div class="my-3">
+                    Sort by Name
+                  </div>
+                  <div class="my-3">
+                    <a href="#" @click="logout">Login</a>
+                  </div>
+                  <div class="my-3">
+                    <a href="#" @click="logout">Logout</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-7">
+              <div class="cart-list">
+                <div class="cart-item border border-secondary m-2">
+                    <div class="row">
+                      <div class="col-8">
+                          <h2>Name : Sepatu Hitam</h2>
+                          <h4>Price: 20.000</h4>
+                      </div>
+                      <div class="col-4">
+                          <div class="cart-modify" style="margin-top:100px">
+                            <div class="row mx-4">
+                              <button type="button" class="btn btn-danger mx-2">Delete</button>
+                              <button class="btn btn-outline-secondary" type="button">-</button>
+                              <input type="text" class="form-control" placeholder="Ammount" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4" style="width:80px;">
+                              <button class="btn btn-outline-secondary" type="button">+</button>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="row">
+                <div class="border border-success m-2" style="width: 90%; height: 250px;">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </body>
+</html>
